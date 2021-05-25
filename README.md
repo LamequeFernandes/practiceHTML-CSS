@@ -1,3 +1,3 @@
 # Practicing
 
-A little about html and css
+Practicing a little bit of HMTL and CSS
