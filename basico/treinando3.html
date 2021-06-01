@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Treinando 3</title>
+   <style>
+      .img{
+         width: 150px;
+      }
+   </style>
+</head>
+
+<body>
+   <!-- <b> é diferente de <strong>. Enquanto a teg "b" faz ficar em negrito visualmente, a strong 
+   da uma enfase logica a palavra. 
+   A mesma coisa serve para o <i> e o <em>
+   A tag <a> com o href serve para links e o target para definir se vai abrir na mesma guia ou n e etc-->
+   <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Logo-de-la-serie-sons-of-anarchy.jpg" alt="Logo da pagina" >
+   <hr>
+   <h1 style="background: blue;">Cabeçalho</h1>
+   <p>Sou <b>muito</b> lindo <a href="https://www.google.com.br/" target="_blank">bicho</a></p>
+   <p>Codigo:</p>
+   <pre>
+      <code>
+# N é o numero de peças iniciais e M o numero maximo de peças que é possivel retirar em uma rodada 
+
+def computador_escolhe_jogada(n, m): #qts peças o computador deve tirar do tabuleiro para ganhar
+   num = 1
+   aux = m+1
+   sobra = n-num
+  
+
+   while num < m and num <= n:
+      sobra = n-num
+      if num == n:
+         return n
+      if sobra % aux == 0:
+         return num
+      num += 1
+   return m
+
+def usuario_escolhe_jogada(n, m): #validar se a jogada é validade, caso n seja pedir para o mesmo fazer uma diferente
+   num = int(input("\nQuantas peças você vai tirar? "))
+   while True:
+      if num > m or num > n or num < 1:
+         print("\nOops! Jogada Inválida! Tente de novo.")
+         num = int(input("\nQuantas peças você vai tirar? "))
+      else:
+         return num
+
+def partida():
+   n = int(input("Quantas peças? "))
+   m = int(input("Limite de peças por jogada? "))
+   aux = m+1
+   
+   if n % aux == 0:
+      print("\nVocê começa!")
+      while n > 0:
+         u = usuario_escolhe_jogada(n, m)
+         print("\nVocê tirou", u, "peça(s).")
+         n = n - u
+         if n <1:
+            print("Fim de Jogo! Você ganhou")
+            break
+         print("Agora restam", n, "peças no tabuleiro.")
+
+         c = computador_escolhe_jogada(n, m)
+         print("\nO computador tirou", c, "peça(s).")
+         n = n - c
+         if n < 1:
+            print("Fim de Jogo! O computador ganhou!")
+            break
+         print("Agora restam", n, "peças no tabuleiro.")
+   else:
+      print("\nComputador começa!")
+      while n > 0:
+         c = computador_escolhe_jogada(n, m)
+         print("\nO computador tirou", c, "peça(s).")
+         n = n - c
+         if n < 1:
+            print("Fim de Jogo! O computador ganhou!")
+            break
+         print("Agora restam", n, "peças no tabuleiro.")
+      
+         u = usuario_escolhe_jogada(n, m)
+         print("\nVocê tirou", u, "peça(s).")
+         n = n - u
+         if n < 1:
+            print("Fim de Jogo! Você ganhou")
+            break
+         print("Agora restam", n, "peças no tabuleiro.")
+
+def main():
+   print("Bem-vindo ao jogo do NIM! Escolha:\n")
+   print("1 - para jogar uma partida isolada")
+   escolha = int(input("2 - para jogar um coampeonato "))
+   if escolha == 1:
+      print("\nVocê escolheu uma partida")
+      partida()
+   elif escolha == 2:
+      print("\nVocê escolheu um campeonato!")
+      rodada = 1
+      while rodada < 4:
+         print("\n**** Rodada", rodada,"****\n")
+         partida()
+         rodada+=1
+
+      print("\n**** Final do campeonato! ****")
+      print("\nPlacar: Você 0 X 3 Computador")
+
+main()
+      </code>
+   </pre>
+   <p>Agora sobre <span style="color: blueviolet;" >span</span> e div.</p>
+   <p>O span é inline ou seja, pode ir dentro do paragrafo por n ser em block</p>
+   <div style="color:aquamarine">Ja a div é um bloco</div>
+</body>
+
+</html>
