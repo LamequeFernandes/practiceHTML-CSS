@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>562</title>
+
+   <style>
+      table {
+         border-collapse: collapse;
+         width: 100%;
+      }
+      table td, table th{
+         border: 1px solid #ccc;
+         padding: 5px;
+         text-align: left;
+      }
+      table caption {
+         caption-side: bottom;
+         text-align: center;
+         font-style: italic;
+         font-size: 12px;
+         margin-bottom: 5px 0;
+      }
+      body {
+         font-family: sans-serif;
+      }
+      tfoot td, table th {
+         background-color: #ddd;
+      }
+      tfoot td {
+         font-style: italic;
+      }
+   </style>
+</head>
+<body>
+   <p>Lorem, ipsum dolor sit.</p>
+
+   <table>
+      <caption>Descricao da tabela</caption>
+      <thead>
+         <tr>
+            <th>Titulo 1</th>
+            <th>Titulo 2</th>
+            <th>Titulo 3</th>
+         </tr>
+      </thead>
+
+      <tbody>
+         <tr>
+            <td>Corpo 1</td>
+            <td>Corpo 2</td>
+            <td>Corpo 3</td>
+         </tr>
+         <tr>
+            <td colspan="2">Corpo 4</td>
+            <td rowspan="2">Corpo 6</td>
+         </tr>
+         <tr>
+            <td>Corpo 7</td>
+            <td>Corpo 8</td>
+         </tr>
+      </tbody>
+
+      <tfoot>
+         <tr>
+            <td>rodape</td>
+            <td>rodape</td>
+            <td>rodape</td>
+         </tr>
+      </tfoot>
+   </table>
+</body>
+</html>
